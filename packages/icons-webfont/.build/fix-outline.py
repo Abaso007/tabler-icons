@@ -19,12 +19,12 @@ font = fontforge.font()
 for file in files("./icons-outlined"):
     print (f"Correcting outline for {file}")
     glyph = font.createChar(123, file)
-    glyph.importOutlines("./icons-outlined/" + file)
+    glyph.importOutlines(f"./icons-outlined/{file}")
     glyph.round()
     glyph.simplify()
     glyph.simplify()
     glyph.correctDirection()
-    glyph.export("./icons-outlined/" + file)
+    glyph.export(f"./icons-outlined/{file}")
     glyph.clear()
 
 
